@@ -1,7 +1,18 @@
 import CharacterCard from "./_components/character-card";
 import SearchBar from "./_components/search-bar";
+import { SearchParams } from "@/modules/characters/domain";
+import { config, searchCharacters } from "@/modules/characters/application";
 
-export default function Home() {
+export default async function Home({
+  searchParams = {},
+}: {
+  searchParams: SearchParams;
+}) {
+  const characters = await searchCharacters(
+    config.characterRepository,
+    searchParams
+  );
+
   return (
     <main className="md:container md:mx-auto px-4 py-6">
       <h1 className="prose prose-2xl text-neutral mb-3">Search characters</h1>
