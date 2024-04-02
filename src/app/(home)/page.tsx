@@ -18,9 +18,11 @@ export default async function Home({
       <h1 className="prose prose-2xl text-neutral mb-3">Search characters</h1>
       <SearchBar />
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 auto-rows-auto gap-8 py-16">
-        <li>
-          <CharacterCard />
-        </li>
+        {characters.map((character) => (
+          <li key={character.id}>
+            <CharacterCard characterData={character} />
+          </li>
+        ))}
       </ul>
     </main>
   );

@@ -1,6 +1,9 @@
+import { Character } from "@/modules/characters/domain";
 import Image from "next/image";
 
-const CharacterCard = () => {
+const CharacterCard = ({ characterData }: { characterData: Character }) => {
+  const { name, description, ki } = characterData;
+
   return (
     <div className="card bg-base-200 shadow-xl">
       <figure className="relative w-full aspect-square">
@@ -13,13 +16,10 @@ const CharacterCard = () => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Name</h2>
-        <p className="mb-4">
-          Description Esse ullamco fugiat esse tempor commodo et deserunt
-          pariatur commodo aliquip eu Lorem amet.
-        </p>
+        <h2 className="card-title">{name}</h2>
+        <p className="mb-4 line-clamp-3">{description}</p>
         <div>
-          Ki: <span className="badge badge-primary">100</span>
+          Ki: <span className="badge badge-primary">{ki}</span>
         </div>
       </div>
     </div>
