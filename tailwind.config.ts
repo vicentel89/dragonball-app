@@ -20,6 +20,7 @@ const config: Config = {
           success: "#00bc84",
           warning: "#d45600",
           error: "#ff003d",
+
           "--bc": "98% 0.003144 264.290563",
         },
       },
