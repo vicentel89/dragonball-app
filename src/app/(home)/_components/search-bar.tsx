@@ -9,7 +9,12 @@ const SearchBar = () => {
       </label>
       <label className="flex gap-2 flex-col">
         <span className="label-text">Ki units</span>
-        <input type="range" min={0} max="100" className="range range-xs" />
+        <input
+          type="range"
+          min={0}
+          max="100"
+          className="range range-xs range-primary"
+        />
       </label>
     </div>
   );
